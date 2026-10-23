@@ -1,1 +1,51 @@
+# SkillPath theme.
 #
+# Light and dark are SELECTED, not auto-flipped: each mode's colours are stepped
+# for its own surface and checked against it, per the palette this is drawn from.
+# Surfaces are #fcfcfb (light) and #1a1a19 (dark) - the two the palette documents,
+# so its published contrast results apply unchanged.
+#
+# Colour does one job each:
+#   primaryColor  - blue. Identity and interaction only (focus, selection, the
+#                   "you are here" rung). Never used to mean good or bad.
+#   status orange - the gap finding, in app.py's callout cards. Sub-3:1 on the
+#                   light surface by design, so it is never the only signal:
+#                   every card pairs it with an icon and a text heading, and the
+#                   heading ink is a darker step of the same hue (#c2410c, 5.04:1).
+#   status green  - reserved for "no divergence", the genuinely healthy case.
+#   red           - reserved for validation errors. Not used for findings: a
+#                   missing ladder is an opportunity, not a failure.
+#
+# Type stays in one system sans at every size - no display or serif face.
+
+[theme]
+font = "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+headingFontWeights = [650, 620, 600]
+baseRadius = "0.5rem"
+showWidgetBorder = true
+
+[theme.light]
+base = "light"
+primaryColor = "#2a78d6"
+backgroundColor = "#fcfcfb"
+secondaryBackgroundColor = "#f0efec"
+textColor = "#0b0b0b"
+linkColor = "#2a78d6"
+borderColor = "#e1e0d9"
+dataframeBorderColor = "#e1e0d9"
+dataframeHeaderBackgroundColor = "#f0efec"
+codeBackgroundColor = "#f0efec"
+codeTextColor = "#1c5cab"
+
+[theme.dark]
+base = "dark"
+primaryColor = "#3987e5"
+backgroundColor = "#1a1a19"
+secondaryBackgroundColor = "#242422"
+textColor = "#ffffff"
+linkColor = "#3987e5"
+borderColor = "#2c2c2a"
+dataframeBorderColor = "#2c2c2a"
+dataframeHeaderBackgroundColor = "#242422"
+codeBackgroundColor = "#242422"
+codeTextColor = "#86b6ef"
