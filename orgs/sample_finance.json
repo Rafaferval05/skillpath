@@ -1,1 +1,81 @@
-{}
+{
+  "company": "Acme Corp (sample)",
+  "function": "Finance",
+  "_note": [
+    "Hand-authored sample org for SkillPath Phase 1. The onet_soc field is normally",
+    "populated by the Phase 2 title->SOC matching step; here it is pre-filled so the",
+    "deterministic engine can be exercised without the LLM layer.",
+    "",
+    "13-2099.01 (Financial Quantitative Analysts) stands in for the spec's headline",
+    "13-2051.00 (Financial and Investment Analysts), which has ZERO skill/knowledge",
+    "ratings in O*NET 30.3 and therefore has no vector. Same proxy tests/validate.py uses.",
+    "",
+    "fin-analyst and fin-sr-analyst deliberately share a SOC: mapping both rungs to one",
+    "occupation is the correct real-world answer, and it exercises the engine's",
+    "same-occupation fallback (see README).",
+    "",
+    "fin-director maps to 11-1011.00 Chief Executives: O*NET has no Finance Director",
+    "occupation, and the broad executive code is the closest rated fit. Its ratings span",
+    "every industry, so a few of its deltas (Engineering and Technology, Transportation)",
+    "are artifacts of that breadth rather than real finance-career advice.",
+    "",
+    "There is deliberately NO consulting/analytics rung (13-1111.00 Management Analysts).",
+    "Its absence is what the Phase 5 divergence flag is meant to surface."
+  ],
+  "roles": [
+    {
+      "role_id": "fin-clerk",
+      "title": "Accounts Payable Clerk",
+      "level": 1,
+      "reports_to": "fin-mgr",
+      "headcount": 4,
+      "onet_soc": "43-3031.00",
+      "description": "Processes invoices and payments, maintains the ledger, reconciles vendor accounts."
+    },
+    {
+      "role_id": "fin-analyst",
+      "title": "Financial Analyst",
+      "level": 2,
+      "reports_to": "fin-mgr",
+      "headcount": 6,
+      "onet_soc": "13-2099.01",
+      "description": "Builds models, analyzes financial statements, supports budgeting and forecasting."
+    },
+    {
+      "role_id": "fin-accountant",
+      "title": "Staff Accountant",
+      "level": 2,
+      "reports_to": "fin-mgr",
+      "headcount": 3,
+      "onet_soc": "13-2011.00",
+      "description": "Prepares financial statements, runs the monthly close, supports external audit."
+    },
+    {
+      "role_id": "fin-sr-analyst",
+      "title": "Senior Financial Analyst",
+      "level": 3,
+      "reports_to": "fin-mgr",
+      "headcount": 3,
+      "onet_soc": "13-2099.01",
+      "description": "Owns the forecasting model, leads business-partner reviews, mentors analysts."
+    },
+    {
+      "role_id": "fin-mgr",
+      "title": "Finance Manager",
+      "level": 4,
+      "reports_to": "fin-director",
+      "headcount": 1,
+      "onet_soc": "11-3031.00",
+      "description": "Runs the finance team, owns the budget cycle, manages headcount and planning."
+    },
+    {
+      "role_id": "fin-director",
+      "title": "Finance Director",
+      "level": 5,
+      "reports_to": null,
+      "headcount": 1,
+      "onet_soc": "11-1011.00",
+      "description": "Sets financial strategy, owns the P&L, reports to the executive team."
+    }
+  ]
+}
