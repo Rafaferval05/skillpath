@@ -1,0 +1,11 @@
+# Phase 0 / 1 / 3 - the deterministic data + math layer
+# (the O*NET loader uses the stdlib csv/zipfile modules - no pandas needed)
+numpy>=1.24
+scikit-learn>=1.3
+
+# Phase 2 - title -> SOC matching via Claude
+anthropic>=0.125
+python-dotenv>=1.0
+
+# Phase 4 - UI
+streamlit>=1.40
